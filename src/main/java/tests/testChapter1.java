@@ -41,9 +41,11 @@ public class testChapter1 {
         HomePage home = new HomePage(driver);
 
         home.linkChapter1.click();
-        Assert.assertTrue(driver.findElement(By.id("divontheleft")).getText().contains(textToFind), "Text not found!");
 
         Chapter1Page chapter = new Chapter1Page(driver);
+
+        Assert.assertTrue(chapter.assertText.getText().equals(textToFind), "Text is different!");
+
         chapter.linkHome.click();
 
         System.out.println("Test passed!");
