@@ -3,9 +3,8 @@ package tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-//import org.openqa.selenium.ie.InternetExplorerDriver;
+
 import org.openqa.selenium.chrome.ChromeOptions;
-//import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -24,15 +23,16 @@ public class testChapter1 {
 
     @BeforeClass(groups = "webUI")
     public static void startChrome() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\mboychuk\\IdeaProjects\\test-task\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\mboychuk\\IdeaProjects\\test-task\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--test-type");
         options.addArguments("--start-maximized");
         options.addArguments("--disable-extensions");
 
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("http://book.theautomatedtester.co.uk/");
     }
 
