@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class Chapter1Page {
 
-    @FindBy(xpath = "/html/body/div[2]/p[4]/a")
+    @FindBy(xpath = "//div[@class='mainbody']/p[4]/a")
     public WebElement linkHome;
 
     public Chapter1Page(WebDriver driver) {

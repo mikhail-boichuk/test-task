@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class HomePage {
 
-    @FindBy(xpath = "//html/body/div[2]/ul/li[1]/a")
+    @FindBy(xpath = "//div[@class='mainbody']/ul/li[1]/a")
     public WebElement linkChapter1;
 
     public HomePage(WebDriver driver) {
