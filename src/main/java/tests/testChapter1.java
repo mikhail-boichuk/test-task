@@ -23,7 +23,6 @@ public class testChapter1 {
 
     @BeforeClass(groups = "webUI")
     public static void startChrome() {
-        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\mboychuk\\IdeaProjects\\test-task\\chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--test-type");
