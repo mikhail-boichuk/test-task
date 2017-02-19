@@ -44,7 +44,7 @@ public class testChapter1 {
 
         Chapter1Page chapter = new Chapter1Page(driver);
 
-        Assert.assertTrue(chapter.assertText.getText().equals(textToFind), "Text is different!");
+        Assert.assertEquals(textToFind, chapter.assertText.getText(), "Text is different!");
 
         chapter.linkHome.click();
 
@@ -53,7 +53,9 @@ public class testChapter1 {
 
     @AfterClass(groups = "webUI")
     public static void closeChrome() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
 }
