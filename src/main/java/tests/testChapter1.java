@@ -44,7 +44,10 @@ public class testChapter1 {
 
         Chapter1Page chapter = new Chapter1Page(driver);
 
-        Assert.assertEquals(textToFind, chapter.assertText.getText(), "Text is different!");
+        //Check if text displayed on page
+        Assert.assertTrue(chapter.assertText.isDisplayed(), "Text not displayed!");
+        //Compare text
+        Assert.assertEquals(chapter.assertText.getText(), textToFind, "Text is different!");
 
         chapter.linkHome.click();
 
